@@ -1,4 +1,4 @@
 <script lang="ts" setup></script>
 <template>
-	<h1>Category Index</h1>
+	<PageHeader title="Category Index" />
 </template>
