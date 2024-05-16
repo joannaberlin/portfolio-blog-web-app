@@ -6,7 +6,7 @@ defineProps<{
 <template>
 	<section class="hero bg-gray-100 py-10">
 		<div class="container flex">
-			{{ title }}
+			<h1 v-if="title" class="text-4xl font-bold">{{ title }}</h1>
 			<slot />
 		</div>
 	</section>

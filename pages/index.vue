@@ -26,5 +26,27 @@
 				</div>
 			</div>
 		</PageHeader>
+		<section class="container py-16">
+			<div class="grid sm:grid-cols-3 gap-5">
+				<div v-for="i in 9" :key="i" class="col-span-1 shadow-lg">
+					<!-- Blog Image -->
+					<div class="w-full h-[180px] relative">
+						<img
+							src="/assets/images/jo-poster-frame.jpg"
+							alt="Blog Thumbnail"
+							class="w-full h-full absolute object-cover"
+						/>
+					</div>
+					<!-- Blog Content -->
+					<div class="p-5">
+						<h3 class="text-xl font-semibold mb-3">Blog Title</h3>
+						<p class="text-sm mb-3">
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+						</p>
+						<NuxtLink :to="`/${i}`">Read More</NuxtLink>
+					</div>
+				</div>
+			</div>
+		</section>
 	</main>
 </template>
