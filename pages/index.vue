@@ -32,7 +32,9 @@
 					v-for="i in 9"
 					:key="i"
 					title="How to create sth somewhere"
-					excerpt="Something something"
+					excerpt="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt,
+			deleniti. Nesciunt laboriosam hic id unde atque omnis nam blanditiis, sunt
+			aliquam veniam, amet quis quas eligendi pariatur a dicta. Reprehenderit!"
 					image="https://i.postimg.cc/6pX41VW0/3.jpg"
 					slug="blog-1"
 				/>
