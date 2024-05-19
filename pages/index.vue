@@ -1,4 +1,8 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const { data: posts } = await useFetch<any>(
+	'https://dev-joannadidthis.pantheonsite.io/wp-json/wp/v2/posts'
+);
+</script>
 <template>
 	<main>
 		<PageHeader>
@@ -29,14 +33,12 @@
 		<section class="container py-16">
 			<div class="grid sm:grid-cols-3 gap-5">
 				<BlogCard
-					v-for="i in 9"
-					:key="i"
-					title="How to create sth somewhere"
-					excerpt="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt,
-			deleniti. Nesciunt laboriosam hic id unde atque omnis nam blanditiis, sunt
-			aliquam veniam, amet quis quas eligendi pariatur a dicta. Reprehenderit!"
+					v-for="post in posts"
+					:key="post.id"
+					:title="post.title.rendered"
+					:excerpt="post.uagb_excerpt"
 					image="https://i.postimg.cc/6pX41VW0/3.jpg"
-					slug="blog-1"
+					:slug="post.slug"
 				/>
 			</div>
 		</section>
