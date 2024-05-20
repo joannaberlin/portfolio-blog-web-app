@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const { data: posts } = await useFetch<any>(
-	'https://dev-joannadidthis.pantheonsite.io/wp-json/wp/v2/posts'
+	'https://dev-joannadidthis.pantheonsite.io/wp-json/wp/v2/posts?_embed'
 );
 </script>
 <template>
@@ -37,7 +37,7 @@ const { data: posts } = await useFetch<any>(
 					:key="post.id"
 					:title="post.title.rendered"
 					:excerpt="post.uagb_excerpt"
-					image="https://i.postimg.cc/6pX41VW0/3.jpg"
+					:image="post._embedded['wp:featuredmedia'][0]?.source_url"
 					:slug="post.slug"
 				/>
 			</div>
