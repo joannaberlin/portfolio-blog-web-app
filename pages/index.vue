@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-const { data: posts } = await useFetch<any>(
-	'https://dev-joannadidthis.pantheonsite.io/wp-json/wp/v2/posts?_embed'
-);
+const { data: posts } = await useWpApi().getPosts<any>();
 </script>
 <template>
 	<main>
