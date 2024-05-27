@@ -19,7 +19,8 @@ export default () => {
 	};
 
 	//Get a Single Post
-	const getPost = async (slug: string) => get(`posts?slug=${slug}&_embed`);
+	const getPost = async <T>(slug: string) =>
+		get<T>(`posts?slug=${slug}&_embed`);
 
 	//Get All Categories
 	const getCategories = async () => get('categories');
