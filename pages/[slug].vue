@@ -19,44 +19,16 @@ const post = posts.value[0];
 				<span>Published on by {{ post.date }}</span>
 			</div>
 			<div
-				class="w-full h-[250px] sm:h-[400px] relative shadow-xl rounded overflow-hidden mb-10"
+				class="w-full h-[250px] sm:h-[450px] relative shadow-xl rounded overflow-hidden mb-10"
 			>
 				<img
-					src="/assets/images/jo-poster-frame.jpg"
+					:src="post._embedded['wp:featuredmedia'][0]?.source_url"
 					alt="Blog Thumb"
 					class="absolute w-full h-full object-cover"
 				/>
 			</div>
 			<div class="post-content">
-				<p class="mb-10">
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo,
-					fuga modi porro dicta sint qui omnis ratione unde minima laboriosam
-					amet magni? Nam, ut nulla? Explicabo, fuga modi porro dicta sint qui
-					omnis ratione unde minima laboriosam amet magni? Nam, ut nulla?
-				</p>
-				<p class="mb-10">
-					Voluptatibus ab officiis amet error. Aliquid tenetur culpa harum
-					voluptatibus veniam vel qui nobis eaque. Velit maiores facere
-					aspernatur recusandae voluptates placeat reiciendis quidem possimus?
-				</p>
-				<p class="mb-10">
-					Commodi voluptates eius rerum cumque voluptas quia iusto veniam
-					veritatis aspernatur voluptate sapiente beatae debitis itaque ratione,
-					odit ex dolore impedit corporis eveniet id nemo. Commodi voluptates
-					eius rerum cumque voluptas quia iusto veniam veritatis aspernatur
-					voluptate sapiente beatae debitis itaque ratione, odit ex dolore
-					impedit corporis eveniet id nemo.
-				</p>
-				<p class="mb-10">
-					Neque reiciendis veniam natus. Illum corporis aut iusto, omnis amet
-					impedit quo corrupti, id quidem labore, dolor eligendi. Recusandae et
-					provident autem hic nihil totam?
-				</p>
-				<p class="mb-10">
-					Excepturi magnam ea velit maiores vero nobis ullam, magni animi
-					veritatis eum voluptates officiis illo ipsa ex, enim consequatur eaque
-					illum? Aperiam nostrum unde voluptatum?
-				</p>
+				<div v-html="post.content.rendered"></div>
 			</div>
 		</section>
 	</main>
