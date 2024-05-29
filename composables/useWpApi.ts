@@ -1,9 +1,9 @@
 export default () => {
 	const config = useRuntimeConfig();
-	const wpUri = config.public.wpUri;
+	const WP_URL = config.public.wpUri;
 
 	const get = async <T>(endpoint: string) => {
-		return useFetch<T>(`${wpUri}/wp-json/wp/v2/${endpoint}`);
+		return useFetch<T>(`${WP_URL}/wp-json/wp/v2/${endpoint}`);
 	};
 	//Get All Posts
 	const getPosts = async <T>(
@@ -13,7 +13,7 @@ export default () => {
 	) => {
 		let query = `posts?_embed&per_page=${perPage}&page=${page}`;
 		if (categories) {
-			query += `$categories=${categories}`;
+			query += `&categories=${categories}`;
 		}
 		return get<T>(query);
 	};
