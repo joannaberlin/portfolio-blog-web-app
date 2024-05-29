@@ -23,10 +23,11 @@ export default () => {
 		get<T>(`posts?slug=${slug}&_embed`);
 
 	//Get All Categories
-	const getCategories = async () => get('categories');
+	const getCategories = async <T>() => get<T>('categories');
 
 	//Get a Single Category
-	const getCategory = async (slug: string) => get(`categories?slug=${slug}`);
+	const getCategory = async <T>(slug: string) =>
+		get<T>(`categories?slug=${slug}`);
 
 	return {
 		get,
